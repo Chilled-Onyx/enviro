@@ -1,0 +1,51 @@
+{
+  "name": "enviro",
+  "version": "0.0.1",
+  "description": "Environmental variable storage and management over REST",
+  "main": "dist/index.js",
+  "scripts": {
+    "allTests": "npm t && npm run e2e && npm run lint",
+    "build": "npm run compile && npm run genBanner",
+    "compile": "./build/compile.js",
+    "e2e": "node --no-warnings --experimental-fetch ./node_modules/.bin/jest -c tests/e2e/jest.config.js --detectOpenHandles --runInBand",
+    "genBanner": "./build/bannerGenerator.js",
+    "lint": "eslint .",
+    "start": "npm run build && node dist/index.js",
+    "test": "jest -c tests/unit/jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Chilled-Onyx/enviro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Chilled-Onyx/enviro/issues"
+  },
+  "homepage": "https://github.com/Chilled-Onyx/enviro",
+  "nodemonConfig": {
+    "ignore": [
+      "tests/*",
+      "build/*",
+      "dist/*",
+      "storage/*",
+      "tmp/*",
+      "node_modules/*"
+    ],
+    "ext": "js, json, ts",
+    "exec": "clear && ts-node src/server.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "figlet": "^1.5.2",
+    "jest": "^28.0.3",
+    "nodemon": "^2.0.16",
+    "ts-jest": "^28.0.3",
+    "typescript": "^4.7.3"
+  }
+}
