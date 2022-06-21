@@ -17,7 +17,7 @@ export const isObject = (testValue: unknown): boolean =>
     !Array.isArray(testValue));
 
 /**
- * Deep object mreging
+ * Deep object merging
  * 
  * @param target object Target object to merge onto
  * @param source object Object to merge onto target
